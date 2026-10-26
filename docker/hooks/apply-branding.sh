@@ -30,4 +30,17 @@ occ theming:config logoheader "$img/logo-white.png"
 occ theming:config favicon "$img/favicon-512.png"
 occ theming:config background "$img/background.jpg"
 
+# Remove Nextcloud promotion, news and help links shown to users
+for app in firstrunwizard nextcloud_announcements privacy support survey_client; do
+	occ app:disable "$app" || true
+done
+occ config:system:set knowledgebaseenabled --value=false --type=boolean
+occ config:system:set simpleSignUpLink.shown --value=false --type=boolean
+
+# "Get the apps" links point to the MyStickCloud website instead of the Nextcloud stores
+apps_url="${MYSTICKCLOUD_APPS_URL:-https://mystickcloud.com}"
+for key in customclient_desktop customclient_android customclient_ios customclient_fdroid; do
+	occ config:system:set "$key" --value="$apps_url"
+done
+
 echo "MyStickCloud: branding applied"

@@ -25,6 +25,11 @@ The first start installs Nextcloud, which takes a few minutes.
 - name, slogan and URL
 - primary colour `#1E5EFF`, background colour `#0B1F3A`
 - logo, header logo, favicon and login background
+- turns off Nextcloud promotion for users: the first-run "What's new" wizard,
+  Nextcloud news, the privacy page, help links and the "Get your own free account" link
+- turns off the `support` and `survey_client` admin apps (paid plan adverts and usage
+  statistics sent to Nextcloud)
+- "Get the apps" links open `MYSTICKCLOUD_APPS_URL`
 
 To change the branding, edit the files in `themes/mystickcloud` or the hook,
 then run `docker compose restart app`.
