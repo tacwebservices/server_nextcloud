@@ -8,12 +8,12 @@ a[href*="transifex.com/nextcloud"] {
 	display: none !important;
 }
 
-/* Links to the Nextcloud documentation */
-a[href*="docs.nextcloud.com"] {
+/* Links to Nextcloud websites (documentation, security scan, developer pages, ...) */
+a[href*="nextcloud.com"] {
 	display: none !important;
 }
 
-/* "Join our design team" note in Appearance settings */
-p:has(> a[href*="nextcloud.com/design"]) {
+/* Sentences built around such a link, e.g. "join our design team" or the security scan */
+p:has(> a[href*="nextcloud.com"]) {
 	display: none !important;
 }

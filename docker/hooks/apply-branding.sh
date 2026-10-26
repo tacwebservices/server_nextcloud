@@ -30,10 +30,16 @@ occ theming:config logoheader "$img/logo-white.png"
 occ theming:config favicon "$img/favicon-512.png"
 occ theming:config background "$img/background.jpg"
 
-# Remove Nextcloud promotion, news and help links shown to users
-for app in firstrunwizard nextcloud_announcements privacy support survey_client; do
+# Remove Nextcloud promotion, news, help links and services that contact Nextcloud.
+# Updates come from the docker image, so the update notifications are not needed.
+for app in firstrunwizard nextcloud_announcements privacy support survey_client \
+	updatenotification app_api federation; do
 	occ app:disable "$app" || true
 done
+occ config:system:set appstoreenabled --value=false --type=boolean
+occ config:system:set updatechecker --value=false --type=boolean
+# Single-server setup; clears the "server identifier" setup warning
+occ config:system:set serverid --value=1 --type=integer
 occ config:system:set knowledgebaseenabled --value=false --type=boolean
 occ config:system:set simpleSignUpLink.shown --value=false --type=boolean
 
