@@ -24,7 +24,7 @@ The first start installs Nextcloud, which takes a few minutes.
 - theme `mystickcloud` (`themes/mystickcloud`)
 - name, slogan and URL
 - primary colour `#1E5EFF`, background colour `#0B1F3A`
-- logo, header logo and favicon
+- logo, header logo, favicon and login background
 
 To change the branding, edit the files in `themes/mystickcloud` or the hook,
 then run `docker compose restart app`.

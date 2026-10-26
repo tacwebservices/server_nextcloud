@@ -28,5 +28,6 @@ occ theming:config background_color "#0B1F3A"
 occ theming:config logo "$img/logo-icon.png"
 occ theming:config logoheader "$img/logo-white.png"
 occ theming:config favicon "$img/favicon-512.png"
+occ theming:config background "$img/background.jpg"
 
 echo "MyStickCloud: branding applied"
