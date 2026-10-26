@@ -1,0 +1,9 @@
+/**
+ * SPDX-FileCopyrightText: 2026 MyStickCloud
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* Space between the logo and the login box */
+#header .logo {
+	margin-bottom: 32px;
+}
