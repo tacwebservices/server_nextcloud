@@ -7,3 +7,8 @@
 #header .logo {
 	margin-bottom: 32px;
 }
+
+/* Space between the login box and the footer */
+footer.guest-box {
+	margin-top: 32px;
+}
