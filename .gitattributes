@@ -4,3 +4,4 @@
 /package-lock.json merge=binary
 /core/css/*.css* binary
 /.devcontainer/*.sh text eol=lf
+/docker/hooks/*.sh text eol=lf
