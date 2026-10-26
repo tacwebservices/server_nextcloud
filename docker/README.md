@@ -30,6 +30,9 @@ The first start installs Nextcloud, which takes a few minutes.
 - turns off the `support` and `survey_client` admin apps (paid plan adverts and usage
   statistics sent to Nextcloud)
 - "Get the apps" links open `MYSTICKCLOUD_APPS_URL`
+- new accounts start with the MyStickCloud files in `themes/mystickcloud/skeleton`
+  instead of the Nextcloud sample files, plus the office templates
+- turns off sharing with other Nextcloud servers (federation)
 
 To change the branding, edit the files in `themes/mystickcloud` or the hook,
 then run `docker compose restart app`.

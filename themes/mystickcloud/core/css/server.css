@@ -1,0 +1,19 @@
+/**
+ * SPDX-FileCopyrightText: 2026 MyStickCloud
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
+/* "Help translate" link to the Nextcloud translation project */
+a[href*="transifex.com/nextcloud"] {
+	display: none !important;
+}
+
+/* Links to the Nextcloud documentation */
+a[href*="docs.nextcloud.com"] {
+	display: none !important;
+}
+
+/* "Join our design team" note in Appearance settings */
+p:has(> a[href*="nextcloud.com/design"]) {
+	display: none !important;
+}

@@ -37,6 +37,21 @@ done
 occ config:system:set knowledgebaseenabled --value=false --type=boolean
 occ config:system:set simpleSignUpLink.shown --value=false --type=boolean
 
+# No sharing with other Nextcloud servers (federation), which also removes its Nextcloud promotion
+for key in outgoing_server2server_share_enabled incoming_server2server_share_enabled \
+	outgoing_server2server_group_share_enabled incoming_server2server_group_share_enabled \
+	lookupServerEnabled lookupServerUploadEnabled; do
+	occ config:app:set files_sharing "$key" --value=no
+done
+
+# Starter files for new accounts, and office templates without the Nextcloud notes
+occ config:system:set skeletondirectory --value=/var/www/html/themes/mystickcloud/skeleton
+templates="$(occ config:system:get datadirectory)/mystickcloud-templates"
+rm -rf "$templates"
+cp -r /var/www/html/core/skeleton/Templates "$templates"
+rm -f "$templates/Readme.md" "$templates/Meeting notes.md"
+occ config:system:set templatedirectory --value="$templates"
+
 # "Get the apps" links point to the MyStickCloud website instead of the Nextcloud stores
 apps_url="${MYSTICKCLOUD_APPS_URL:-https://mystickcloud.com}"
 for key in customclient_desktop customclient_android customclient_ios customclient_fdroid; do
